@@ -37,7 +37,7 @@ const Contact = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-2 border-primary-foreground text-primary-foreground hover:bg-white/10 font-source-sans font-semibold text-lg px-8 py-6 w-full sm:w-auto"
+                className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-primary font-source-sans font-semibold text-lg px-8 py-6 w-full sm:w-auto"
                 asChild
               >
                 <a 

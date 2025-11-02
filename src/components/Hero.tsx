@@ -9,26 +9,26 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center text-primary-foreground animate-fade-in">
           <div className="flex justify-center gap-4 mb-8">
-            <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl">
-              <Cloud className="w-8 h-8" />
+            <div className="p-3 rounded-xl" style={{ backgroundColor: 'rgba(20, 40, 80, 0.85)' }}>
+              <Cloud className="w-8 h-8 text-white" />
             </div>
-            <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl">
-              <Code className="w-8 h-8" />
+            <div className="p-3 rounded-xl" style={{ backgroundColor: 'rgba(20, 40, 80, 0.85)' }}>
+              <Code className="w-8 h-8 text-white" />
             </div>
-            <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl">
-              <Shield className="w-8 h-8" />
+            <div className="p-3 rounded-xl" style={{ backgroundColor: 'rgba(20, 40, 80, 0.85)' }}>
+              <Shield className="w-8 h-8 text-white" />
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-montserrat font-bold mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-montserrat font-bold mb-6 leading-tight text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)' }}>
             Ambicapathy Palanivelu
           </h1>
           
-          <p className="text-xl md:text-2xl font-montserrat font-semibold mb-4 text-accent">
+          <p className="text-xl md:text-2xl font-montserrat font-bold mb-4 text-white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)' }}>
             Senior Cloud Operations Engineer & Systems Engineer
           </p>
           
-          <p className="text-lg md:text-xl font-source-sans mb-8 max-w-3xl mx-auto text-primary-foreground/90 leading-relaxed">
+          <p className="text-lg md:text-xl font-source-sans font-medium mb-8 max-w-3xl mx-auto text-white leading-relaxed" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.3)' }}>
             Building scalable, secure, and automated cloud infrastructures that drive business success. 
             Passionate about innovation, automation, and solving complex technical challenges.
           </p>
@@ -53,7 +53,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-2 border-primary-foreground text-primary-foreground hover:bg-white/10 font-source-sans font-semibold text-lg px-8 py-6"
+              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-primary font-source-sans font-semibold text-lg px-8 py-6"
               onClick={() => document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Explore Expertise
