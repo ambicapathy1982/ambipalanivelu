@@ -1,0 +1,82 @@
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "AI Agents by Industry", path: "/ai-agents-by-industry" },
+    { name: "Certifications", path: "/certifications" },
+    { name: "Success Stories", path: "/success-stories" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const isActive = (path: string) => location.pathname === path;
+
+  return (
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo/Name */}
+          <Link to="/" className="font-montserrat font-bold text-xl text-primary hover:text-primary/80 transition-colors">
+            Ambicapathy Palanivelu
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`font-source-sans font-medium transition-colors ${
+                  isActive(link.path)
+                    ? "text-primary border-b-2 border-primary"
+                    : "text-muted-foreground hover:text-primary"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden py-4 animate-fade-in">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`block py-3 font-source-sans font-medium transition-colors ${
+                  isActive(link.path)
+                    ? "text-primary font-semibold"
+                    : "text-muted-foreground hover:text-primary"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;
